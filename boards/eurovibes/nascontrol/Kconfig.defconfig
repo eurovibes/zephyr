@@ -1,0 +1,14 @@
+# Eurovibes STM32G474CET based NAScontrol board
+
+# Copyright (c) 2026 Benedikt Spranger
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_EUROVIBES_STM32G474_NASCONTROL
+
+source "boards/common/usb/Kconfig.cdc_acm_serial.defconfig"
+
+config SPI_STM32_INTERRUPT
+	default y
+	depends on SPI
+
+endif # BOARD_EUROVIBES_STM32G474_NASCONTROL
