@@ -1,0 +1,19 @@
+identifier: nascontrol
+name: Eurovibes NAScontrol
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+ram: 128
+flash: 512
+supported:
+  - nvs
+  - i2c
+  - gpio
+  - usb device
+  - counter
+  - spi
+  - watchdog
+  - dma
