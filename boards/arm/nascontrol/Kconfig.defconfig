@@ -15,4 +15,47 @@ config SPI_STM32_INTERRUPT
 config HEAP_MEM_POOL_SIZE
         default 4096
 
+config USB_DEVICE_STACK
+        default y
+
+config USB_CDC_ACM
+        default SERIAL
+
+config UART_CONSOLE
+        default CONSOLE
+
+config USB_DEVICE_INITIALIZE_AT_BOOT
+        default y if CONSOLE
+
+config SHELL_BACKEND_SERIAL_CHECK_DTR
+        default SHELL
+        depends on UART_LINE_CTRL
+
+config UART_LINE_CTRL
+        default SHELL
+
+config USB_DEVICE_REMOTE_WAKEUP
+        default n
+
+config USB_DEVICE_PRODUCT
+        default "Eurovibes NAScontrol"
+
+config UART_INTERRUPT_DRIVEN
+        default y
+
+config UART_LINE_CTRL
+        default y
+
+if LOG
+
+# Logger cannot use itself to log
+config USB_CDC_ACM_LOG_LEVEL
+        default 0
+
+# Set USB log level to error only
+config USB_DEVICE_LOG_LEVEL
+        default 1
+
+endif # LOG
+
 endif # BOARD_NASCONTROL
