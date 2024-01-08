@@ -11,7 +11,11 @@
 / {
 	model = "Eurovibes NAScontrol board";
 	compatible = "eurovibes,nascontrol";
-	
+
+	aliases {
+		watchdog0 = &iwdg;
+	};
+
 	chosen {
 		zephyr,console = &usart1;
 		zephyr,shell-uart = &usart1;
@@ -104,6 +108,10 @@
 
 &clk_hse {
 	clock-frequency = <DT_FREQ_M(8)>;
+	status = "okay";
+};
+
+&iwdg {
 	status = "okay";
 };
 
