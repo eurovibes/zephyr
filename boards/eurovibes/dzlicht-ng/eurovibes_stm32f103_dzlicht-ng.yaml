@@ -1,0 +1,21 @@
+identifier: eurovibes_stm32f103_dzlicht-ng
+name: Eurovibes STM32F103 based DZLicht-NG Board
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+ram: 20
+flash: 128
+supported:
+  - can
+  - counter
+  - gpio
+  - i2c
+  - nvs
+  - pinctrl
+  - rtc
+  - uart
+  - usbd
+  - watchdog
+vendor: eurovibes
