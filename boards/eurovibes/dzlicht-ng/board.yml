@@ -1,0 +1,6 @@
+board:
+  name: eurovibes_stm32f103_dzlicht-ng
+  full_name: STM32F103 based DZLicht-NG board
+  vendor: eurovibes
+  socs:
+    - name: stm32f103xb
