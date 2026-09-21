@@ -1,0 +1,5 @@
+# Copyright (c) 2026 Benedikt Spranger
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_EUROVIBES_STM32F103_RACK_SER_ADAPTER_TESTER
+	select SOC_STM32F103XB

@@ -1,0 +1,19 @@
+identifier: eurovibes_stm32f103_rack-ser-adapter-tester
+name: Eurovibes STM32F103 based serial adapter tester Board
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+ram: 20
+flash: 128
+supported:
+  - counter
+  - gpio
+  - i2c
+  - nvs
+  - pinctrl
+  - rtc
+  - uart
+  - watchdog
+vendor: eurovibes
