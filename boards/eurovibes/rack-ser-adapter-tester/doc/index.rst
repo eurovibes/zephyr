@@ -2,7 +2,7 @@
 
 The Eurovibes STM32F103 based Rack Serial Adapter Tester board is a test unit
 for RJ45 to DB9 serial adapter with a 3.5 inch display, 5 keys and SD card slot.
-See the `STM32F103CB website`_ for more information about the MCU. More
+See the `STM32F103C8 website`_ for more information about the MCU. More
 information about the board, including schematics, is available from the
 `Eurovibes GitHub`_.
 
@@ -92,8 +92,8 @@ References
 .. _Eurovibes GitHub:
    https://github.com/eurovibes/rack-ser-adapter
 
-.. _STM32F103CB website:
-   https://www.st.com/en/microcontrollers-microprocessors/stm32f103cb.html
+.. _STM32F103C8 website:
+   https://www.st.com/en/microcontrollers-microprocessors/stm32f103c8.html
 
 .. _STM32F1 reference manual:
    https://www.st.com/resource/en/reference_manual/rm0008-stm32f101xx-stm32f102xx-stm32f103xx-stm32f105xx-and-stm32f107xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf

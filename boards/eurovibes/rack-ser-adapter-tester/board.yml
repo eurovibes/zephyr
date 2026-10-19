@@ -3,4 +3,4 @@ board:
   full_name: STM32F103 based serial adapter tester board
   vendor: eurovibes
   socs:
-    - name: stm32f103xb
+    - name: stm32f103x8
