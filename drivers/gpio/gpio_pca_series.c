@@ -540,7 +540,7 @@ static inline int gpio_pca_series_reg_cache_read(const struct device *dev,
 	}
 
 	if (offset == PCA_REG_INVALID) {
-		LOG_ERR("can not get noncacheable reg %d");
+		LOG_ERR("can not get noncacheable reg %d", offset);
 		return -EFAULT;
 	}
 #endif /* GPIO_NXP_PCA_SERIES_DEBUG */
@@ -858,7 +858,7 @@ void gpio_pca_series_debug_dump(const struct device *dev)
 		/** do_print */
 #ifdef CONFIG_GPIO_PCA_SERIES_CACHE_ALL
 		if (reg != PCA_REG_INVALID && cache != PCA_REG_INVALID) {
-			LOG_WRN("%.2d\t%-24s\t0x%2.2x\t0x%16.16x\t0x%2.2x\t0x%16.16x\t"
+			LOG_WRN("%.2d\t%-24s\t0x%2.2x\t0x%16.16llx\t0x%2.2x\t0x%16.16llx\t"
 				, reg_type, gpio_pca_series_reg_name[reg_type]
 				, reg, *reg_val_p
 				, cache, *cache_val_p
@@ -872,13 +872,13 @@ void gpio_pca_series_debug_dump(const struct device *dev)
 			 * PCA_REG_TYPE_2B_INTERRUPT_EDGE caches mask of rising and falling pins,
 			 * while the actual register is not present. Account for that here:
 			 */
-			LOG_WRN("%.2d\t%-24s\tNone\tNone\t\t\t0x%2.2x\t0x%16.16x\t"
+			LOG_WRN("%.2d\t%-24s\tNone\tNone\t\t\t0x%2.2x\t0x%16.16llx\t"
 				, reg_type, gpio_pca_series_reg_name[reg_type]
 				, cache, *cache_val_p
 			);
 		} else {
 #endif /* CONFIG_GPIO_PCA_SERIES_CACHE_ALL */
-			LOG_WRN("%.2d\t%-24s\t0x%2.2x\t0x%16.16x\t"
+			LOG_WRN("%.2d\t%-24s\t0x%2.2x\t0x%16.16llx\t"
 #ifdef CONFIG_GPIO_PCA_SERIES_CACHE_ALL
 				"None\tNone\t\t\t"
 #endif /* CONFIG_GPIO_PCA_SERIES_CACHE_ALL */
@@ -930,11 +930,11 @@ void gpio_pca_series_cache_test(const struct device *dev)
 		(void)gpio_pca_series_reg_cache_update(dev, reg_type, reset_value_0);
 		*buffer_p = 0;
 		gpio_pca_series_reg_cache_read(dev, reg_type, buffer);
-		LOG_WRN("fill 00, result: 0x%16.16x", *buffer_p);
+		LOG_WRN("fill 00, result: 0x%16.16llx", *buffer_p);
 		(void)gpio_pca_series_reg_cache_update(dev, reg_type, reset_value_1);
 		*buffer_p = 0;
 		gpio_pca_series_reg_cache_read(dev, reg_type, buffer);
-		LOG_WRN("fill ff, result: 0x%16.16x", *buffer_p);
+		LOG_WRN("fill ff, result: 0x%16.16llx", *buffer_p);
 	}
 	LOG_WRN("**** test finish ****");
 }
